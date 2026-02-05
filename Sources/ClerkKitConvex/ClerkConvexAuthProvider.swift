@@ -152,7 +152,7 @@ public final class ClerkConvexAuthProvider: AuthProvider {
         guard !Task.isCancelled else { break }
 
         switch event {
-        case .tokenRefreshed(let token, _):
+        case .tokenRefreshed(let token):
           onIdToken?(token)
         default:
           break

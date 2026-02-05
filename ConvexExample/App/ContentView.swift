@@ -3,6 +3,7 @@
 //  ConvexExample
 //
 
+import ClerkKit
 import ClerkKitConvex
 import ClerkKitUI
 import Combine
