@@ -12,8 +12,8 @@ let package = Package(
     .library(name: "ClerkKitConvex", targets: ["ClerkKitConvex"]),
   ],
   dependencies: [
-    .package(url: "git@github.com:clerk/clerk-ios.git", branch: "mike/clerk-v1"),
-    .package(url: "git@github.com:seanperez29/convex-swift.git", branch: "feature/Handling-token-refresh"),
+    .package(url: "https://github.com/clerk/clerk-ios.git", branch: "mike/clerk-v1"),
+    .package(url: "https://github.com/seanperez29/convex-swift.git", branch: "feature/Handling-token-refresh"),
   ],
   targets: [
     .target(

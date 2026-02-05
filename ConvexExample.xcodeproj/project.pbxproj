@@ -401,7 +401,7 @@
 
 		8FCONVEX0312E3B000000002 /* XCRemoteSwiftPackageReference "clerk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:clerk/clerk-ios.git";
+			repositoryURL = "https://github.com/clerk/clerk-ios.git";
 			requirement = {
 				kind = branch;
 				branch = "mike/clerk-v1";
