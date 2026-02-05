@@ -1,0 +1,16 @@
+{
+  "name": "convexexample",
+  "version": "1.0.0",
+  "description": "This example app demonstrates how to integrate Clerk authentication with a Convex backend using the `ClerkKitConvex` module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "convex": "^1.31.5"
+  }
+}
