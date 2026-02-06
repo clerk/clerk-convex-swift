@@ -21,8 +21,8 @@ import ClerkKit
 /// )
 /// ```
 ///
-/// - Important: Users must first sign in using Clerk's Prebuilt UI or
-///   Custom Flows. This provider then syncs Convex authentication
+/// - Important: Users must first sign in using Clerk.
+///   This provider then syncs Convex authentication
 ///   automatically; no manual `client.login()` call is required.
 @MainActor
 public final class ClerkConvexAuthProvider: AuthProvider {
