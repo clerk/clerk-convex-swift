@@ -6,7 +6,7 @@ let package = Package(
   name: "ClerkConvex",
   defaultLocalization: "en",
   platforms: [
-    .iOS(.v26),
+    .iOS(.v17),
   ],
   products: [
     .library(name: "ClerkConvex", targets: ["ClerkConvex"]),
