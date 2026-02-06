@@ -1,19 +1,23 @@
+# macOS
 .DS_Store
 
-# Xcode
+# Xcode (user-specific)
 xcuserdata/
-DerivedData/
-build/
-*.ipa
-*.dSYM
-*.dSYM.zip
-*.hmap
+*.xcuserstate
 *.xcscmblueprint
 *.xccheckout
 *.pbxuser
 *.mode1v3
 *.mode2v3
 *.perspectivev3
+
+# Xcode (build artifacts)
+DerivedData/
+build/
+*.ipa
+*.dSYM
+*.dSYM.zip
+*.hmap
 
 # SwiftPM
 .build/
