@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-  name: "ClerkConvexIOS",
+  name: "ClerkConvex",
   defaultLocalization: "en",
   platforms: [
     .iOS(.v26),
   ],
   products: [
-    .library(name: "ClerkKitConvex", targets: ["ClerkKitConvex"]),
+    .library(name: "ClerkConvex", targets: ["ClerkConvex"]),
   ],
   dependencies: [
     .package(url: "https://github.com/clerk/clerk-ios.git", branch: "mike/clerk-v1"),
@@ -17,10 +17,9 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "ClerkKitConvex",
+      name: "ClerkConvex",
       dependencies: [
         .product(name: "ClerkKit", package: "clerk-ios"),
-        .product(name: "ClerkKitUI", package: "clerk-ios"),
         .product(name: "ConvexMobile", package: "convex-swift"),
       ],
       path: "Sources/ClerkKitConvex",
