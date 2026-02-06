@@ -49,17 +49,3 @@ let client = ConvexClientWithAuth(
 This repo includes a full example app at `Example/WorkoutTracker`.
 
 Open `ClerkConvex.xcworkspace` and run the `WorkoutTracker` scheme.
-
-## Reacting to Authentication State
-
-`ConvexClientWithAuth.authState` is a `Publisher` you can use to drive UI state for loading, signed-out, and signed-in flows.
-
-With Clerk integration, the authenticated payload is the Clerk JWT string (`AuthState<String>`), which is sent to Convex for verification.
-
-## Session Sync Behavior
-
-`ClerkConvexAuthProvider` listens to Clerk session changes and keeps Convex auth in sync automatically.
-
-- Sign in with Clerk: Convex auth is established automatically.
-- Token refresh in Clerk: Convex receives refreshed tokens automatically.
-- Sign out from Clerk: Convex auth is cleared automatically.
