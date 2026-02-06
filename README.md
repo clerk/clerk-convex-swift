@@ -5,7 +5,7 @@
 ## Getting Started
 
 If you haven't started a Convex app yet, begin with the
-[Convex Swift iOS quickstart](https://docs.convex.dev/quickstart/ios) to get a working
+[Convex Swift quickstart](https://docs.convex.dev/quickstart/swift) to get a working
 Swift app connected to Convex.
 
 Once you have a working Convex + Swift app, use the steps below to integrate Clerk.
