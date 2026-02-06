@@ -42,7 +42,7 @@ let client = ConvexClientWithAuth(
 )
 ```
 
-6. Update other references of `ConvexClient` in your app code to `ConvexClientWithAuth`.
+6. Authenticate users via Clerk; auth state is automatically synced to Convex.
 
 ## Example App
 
