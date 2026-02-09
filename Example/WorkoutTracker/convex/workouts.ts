@@ -23,6 +23,21 @@ export const store = userMutation({
   },
 });
 
+export const remove = userMutation({
+  args: {
+    workoutId: v.id("workouts"),
+  },
+  handler: async (ctx, args) => {
+    const workout = await ctx.db.get(args.workoutId);
+    if (workout === null || workout.userId !== ctx.identity.tokenIdentifier) {
+      throw new Error("Workout not found");
+    }
+
+    await ctx.db.delete(args.workoutId);
+    return args.workoutId;
+  },
+});
+
 export const getInRange = userQuery({
   args: {
     startDate: v.string(),

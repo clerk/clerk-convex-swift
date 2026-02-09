@@ -5,6 +5,7 @@
 //
 
 import Combine
+import ConvexMobile
 import SwiftUI
 
 class WorkoutsModel: ObservableObject {
@@ -50,6 +51,13 @@ class WorkoutsModel: ObservableObject {
   func previousWeek() {
     selectedStartOfWeek = calendar.date(
       byAdding: .day, value: -7, to: selectedStartOfWeek)!
+  }
+
+  func delete(workout: Workout) {
+    let args: [String: ConvexEncodable] = ["workoutId": workout.id]
+    Task { @MainActor in
+      try? await client.mutation("workouts:remove", with: args)
+    }
   }
 }
 

@@ -31,8 +31,7 @@ class PendingWorkoutModel: ObservableObject {
     if duration != nil {
       args["duration"] = duration
     }
-    Task {
-      @MainActor in
+    Task { @MainActor in
       try await client.mutation("workouts:store", with: args)
       onSuccess()
     }

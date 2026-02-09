@@ -25,8 +25,8 @@ struct WorkoutTrackerApp: App {
   var body: some Scene {
     WindowGroup {
       LandingPage()
-        .environment(Clerk.shared)
         .prefetchClerkImages()
+        .environment(Clerk.shared)
     }
   }
 }

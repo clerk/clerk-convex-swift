@@ -118,7 +118,15 @@ struct WorkoutList: View {
               Text("\(duration) min\(duration > 1 ? "s" : "")")
             }
           }
-        }.listRowBackground(Color.workoutForeground)
+        }
+        .listRowBackground(Color.workoutForeground)
+        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+          Button(role: .destructive) {
+            workoutsModel.delete(workout: workout)
+          } label: {
+            Label("Delete", systemImage: "trash")
+          }
+        }
       }
     }
     .scrollContentBackground(.hidden)

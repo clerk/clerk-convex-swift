@@ -48,6 +48,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		ABF1D6CF2E2B7C1500A1B2C3 /* convex */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = convex;
+			sourceTree = "<group>";
+		};
 		AAD575C22CA3172C00BFCAEF /* WorkoutTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				AA8C9E6A2CB871E70017676F /* README.md */,
+				ABF1D6CF2E2B7C1500A1B2C3 /* convex */,
 				AAD575C22CA3172C00BFCAEF /* WorkoutTracker */,
 				AAD575D32CA3172F00BFCAEF /* WorkoutTrackerTests */,
 				AAD575DD2CA3172F00BFCAEF /* WorkoutTrackerUITests */,
