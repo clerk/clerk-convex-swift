@@ -40,9 +40,6 @@ public final class ClerkConvexAuthProvider: AuthProvider {
   /// Weak reference to the Convex client for session sync.
   private weak var client: ConvexClientWithAuth<String>?
 
-  /// Last observed Clerk session used to detect meaningful transitions.
-  private var previousSession: Session?
-
   /// Creates a new ClerkConvexAuthProvider.
   public init() {}
 
@@ -171,14 +168,14 @@ public final class ClerkConvexAuthProvider: AuthProvider {
     sessionSyncTask = Task { @MainActor [weak self] in
       guard let self else { return }
 
-      await syncSession(for: Clerk.shared.session)
+      await syncSession(newSession: Clerk.shared.session)
 
       for await event in Clerk.shared.auth.events {
         guard !Task.isCancelled else { break }
 
         switch event {
-        case .sessionChanged(let session):
-          await syncSession(for: session)
+        case .sessionChanged(let oldSession, let newSession):
+          await syncSession(oldSession: oldSession, newSession: newSession)
         default:
           break
         }
@@ -186,30 +183,24 @@ public final class ClerkConvexAuthProvider: AuthProvider {
     }
   }
 
-  /// Syncs a specific Clerk session state with the Convex client.
+  /// Syncs a Clerk session transition with the Convex client.
   ///
   /// Convex login only runs when a session transitions from non-active to active.
   /// Convex logout runs when a session transitions from any value to nil.
-  private func syncSession(for session: Session?) async {
+  private func syncSession(oldSession: Session? = nil, newSession: Session?) async {
     guard let client else { return }
 
-    let oldSession = previousSession
-    previousSession = session
-
-    if shouldLogin(oldSession: oldSession, newSession: session) {
+    if shouldLogin(oldSession: oldSession, newSession: newSession) {
       _ = await client.loginFromCache()
-    } else if shouldLogout(oldSession: oldSession, newSession: session) {
+    } else if shouldLogout(oldSession: oldSession, newSession: newSession) {
       await client.logout()
     }
   }
 
   /// Returns true when we should authenticate Convex from cached Clerk credentials.
   private func shouldLogin(oldSession: Session?, newSession: Session?) -> Bool {
-    let wasActive = oldSession?.status == .active
-    let isActive = newSession?.status == .active
-
-    // Login on inactive -> active transition, and when switching to a different active session.
-    return (!wasActive && isActive) || (wasActive && isActive && oldSession?.id != newSession?.id)
+    newSession?.status == .active &&
+    (oldSession?.status != .active || oldSession?.id != newSession?.id)
   }
 
   /// Returns true when we should clear Convex auth due to session removal.

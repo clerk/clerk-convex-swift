@@ -48,11 +48,6 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		ABF1D6CF2E2B7C1500A1B2C3 /* convex */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = convex;
-			sourceTree = "<group>";
-		};
 		AAD575C22CA3172C00BFCAEF /* WorkoutTracker */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -69,6 +64,11 @@
 		AAD575DD2CA3172F00BFCAEF /* WorkoutTrackerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WorkoutTrackerUITests;
+			sourceTree = "<group>";
+		};
+		ABF1D6CF2E2B7C1500A1B2C3 /* convex */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = convex;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
