@@ -8,6 +8,7 @@ import Combine
 import ConvexMobile
 import SwiftUI
 
+@MainActor
 class WorkoutsModel: ObservableObject {
   @Published var workouts: [Workout] = []
   @Published var selectedStartOfWeek: Date
