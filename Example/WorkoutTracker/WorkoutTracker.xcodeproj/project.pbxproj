@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA41AC122CA46C76003CD62C /* ConvexMobile in Frameworks */ = {isa = PBXBuildFile; productRef = AA41AC112CA46C76003CD62C /* ConvexMobile */; };
 		AA41AC152CA46C8C003CD62C /* ClerkConvex in Frameworks */ = {isa = PBXBuildFile; productRef = AA41AC142CA46C8C003CD62C /* ClerkConvex */; };
-		AA41AC422CA48B9A003CD62C /* ClerkKit in Frameworks */ = {isa = PBXBuildFile; productRef = AA41AC412CA48B9A003CD62C /* ClerkKit */; };
-		AA41AC452CA48BA7003CD62C /* ClerkKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA41AC442CA48BA7003CD62C /* ClerkKitUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA41AC452CA48BA7003CD62C /* ClerkKitUI in Frameworks */,
-				AA41AC422CA48B9A003CD62C /* ClerkKit in Frameworks */,
 				AA41AC152CA46C8C003CD62C /* ClerkConvex in Frameworks */,
-				AA41AC122CA46C76003CD62C /* ConvexMobile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,10 +138,7 @@
 			);
 			name = WorkoutTracker;
 			packageProductDependencies = (
-				AA41AC112CA46C76003CD62C /* ConvexMobile */,
 				AA41AC142CA46C8C003CD62C /* ClerkConvex */,
-				AA41AC412CA48B9A003CD62C /* ClerkKit */,
-				AA41AC442CA48BA7003CD62C /* ClerkKitUI */,
 			);
 			productName = WorkoutTracker;
 			productReference = AAD575C02CA3172C00BFCAEF /* WorkoutTracker.app */;
@@ -232,8 +223,6 @@
 			mainGroup = AAD575B72CA3172C00BFCAEF;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				AA41AC402CA48B9A003CD62C /* XCRemoteSwiftPackageReference "convex-swift" */,
-				AA41AC432CA48BA7003CD62C /* XCRemoteSwiftPackageReference "clerk-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AAD575C12CA3172C00BFCAEF /* Products */;
@@ -603,44 +592,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		AA41AC402CA48B9A003CD62C /* XCRemoteSwiftPackageReference "convex-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/seanperez29/convex-swift.git";
-			requirement = {
-				branch = "feature/Handling-token-refresh";
-				kind = branch;
-			};
-		};
-		AA41AC432CA48BA7003CD62C /* XCRemoteSwiftPackageReference "clerk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/clerk/clerk-ios.git";
-			requirement = {
-				branch = "mike/clerk-v1";
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		AA41AC112CA46C76003CD62C /* ConvexMobile */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA41AC402CA48B9A003CD62C /* XCRemoteSwiftPackageReference "convex-swift" */;
-			productName = ConvexMobile;
-		};
 		AA41AC142CA46C8C003CD62C /* ClerkConvex */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ClerkConvex;
-		};
-		AA41AC412CA48B9A003CD62C /* ClerkKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA41AC432CA48BA7003CD62C /* XCRemoteSwiftPackageReference "clerk-ios" */;
-			productName = ClerkKit;
-		};
-		AA41AC442CA48BA7003CD62C /* ClerkKitUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AA41AC432CA48BA7003CD62C /* XCRemoteSwiftPackageReference "clerk-ios" */;
-			productName = ClerkKitUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

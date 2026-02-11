@@ -13,14 +13,15 @@ let package = Package(
     .library(name: "ClerkConvex", targets: ["ClerkConvex"]),
   ],
   dependencies: [
-    .package(url: "https://github.com/clerk/clerk-ios.git", branch: "mike/clerk-v1"),
-    .package(url: "https://github.com/seanperez29/convex-swift.git", branch: "feature/Handling-token-refresh"),
+    .package(url: "https://github.com/clerk/clerk-ios.git", from: "1.0.0"),
+    .package(url: "https://github.com/get-convex/convex-swift.git", revision: "924cd83fa63655bd41222ca3ef31d763e192e965"),
   ],
   targets: [
     .target(
       name: "ClerkConvex",
       dependencies: [
         .product(name: "ClerkKit", package: "clerk-ios"),
+        .product(name: "ClerkKitUI", package: "clerk-ios"),
         .product(name: "ConvexMobile", package: "convex-swift"),
       ],
       path: "Sources/ClerkKitConvex",
