@@ -21,7 +21,6 @@ let package = Package(
       name: "ClerkConvex",
       dependencies: [
         .product(name: "ClerkKit", package: "clerk-ios"),
-        .product(name: "ClerkKitUI", package: "clerk-ios"),
         .product(name: "ConvexMobile", package: "convex-swift"),
       ],
       path: "Sources/ClerkKitConvex",

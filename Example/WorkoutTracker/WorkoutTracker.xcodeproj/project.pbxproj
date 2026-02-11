@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA41AC152CA46C8C003CD62C /* ClerkConvex in Frameworks */ = {isa = PBXBuildFile; productRef = AA41AC142CA46C8C003CD62C /* ClerkConvex */; };
+		AA41AC162CA46C8C003CD62C /* ClerkKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = AA41AC172CA46C8C003CD62C /* ClerkKitUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA41AC152CA46C8C003CD62C /* ClerkConvex in Frameworks */,
+				AA41AC162CA46C8C003CD62C /* ClerkKitUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +141,7 @@
 			name = WorkoutTracker;
 			packageProductDependencies = (
 				AA41AC142CA46C8C003CD62C /* ClerkConvex */,
+				AA41AC172CA46C8C003CD62C /* ClerkKitUI */,
 			);
 			productName = WorkoutTracker;
 			productReference = AAD575C02CA3172C00BFCAEF /* WorkoutTracker.app */;
@@ -596,6 +599,10 @@
 		AA41AC142CA46C8C003CD62C /* ClerkConvex */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ClerkConvex;
+		};
+		AA41AC172CA46C8C003CD62C /* ClerkKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ClerkKitUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
