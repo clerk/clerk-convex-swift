@@ -44,6 +44,10 @@ let client = ConvexClientWithAuth(
 
 6. Authenticate users via Clerk; auth state is automatically synced to Convex.
 
+### Reacting to authentication state
+
+The `ConvexClientWithAuth.authState` field is a `Publisher` that contains the latest authentication state from the client. You can set up your UI to react to new `authState` values and show the appropriate screens (e.g. login/logout buttons, loading screens, authenticated content).
+
 ## Example App
 
 This repo includes a full example app at `Example/WorkoutTracker`.
