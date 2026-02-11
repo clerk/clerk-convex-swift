@@ -1,5 +1,7 @@
 # ClerkConvex
 
+**Status:** 🚧 Work in Progress — contents are unstable and subject to change.
+
 `ClerkConvex` is a Swift package that bridges Clerk and Convex by automatically syncing Clerk session auth into `ConvexClientWithAuth`.
 
 ## Getting Started
