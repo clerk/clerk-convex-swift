@@ -12,7 +12,8 @@ Once you have a working Convex + Swift app, use the steps below to integrate Cle
 Follow the [Clerk iOS quickstart](https://clerk.com/docs/ios/getting-started/quickstart) for app-side Clerk setup details.
 
 1. Set up Clerk in your iOS app (create an app in Clerk, get your publishable key, and add Clerk SDK dependencies).
-2. Configure Convex auth by creating `convex/auth.config.ts`:
+2. In the Clerk Dashboard, complete the [Convex integration setup](https://dashboard.clerk.com/apps/setup/convex)
+3. Configure Convex auth by creating `convex/auth.config.ts`:
 
 ```typescript
 export default {
@@ -25,9 +26,9 @@ export default {
 };
 ```
 
-3. Run `npx convex dev` to sync backend auth configuration.
-4. Add `ClerkConvex` to your app.
-5. Wherever you currently create `ConvexClient`, switch to `ConvexClientWithAuth` and pass `ClerkConvexAuthProvider`:
+4. Run `npx convex dev` to sync backend auth configuration.
+5. Add `ClerkConvex` to your app.
+6. Wherever you currently create `ConvexClient`, switch to `ConvexClientWithAuth` and pass `ClerkConvexAuthProvider`:
 
 ```swift
 import ClerkKit
