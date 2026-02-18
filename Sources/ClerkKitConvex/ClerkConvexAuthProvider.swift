@@ -49,7 +49,7 @@ public final class ClerkConvexAuthProvider: AuthProvider {
   /// calling `loginFromCache()` or `logout()` on the client as needed.
   ///
   /// - Important: `Clerk.configure(...)` must be called before binding.
-  public func bind(client: ConvexClientWithAuth<String>) {
+  func bind(client: ConvexClientWithAuth<String>) {
     self.client = client
     startSessionSync()
   }
