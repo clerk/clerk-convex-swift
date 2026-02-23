@@ -17,7 +17,7 @@ struct LandingPage: View {
       .ignoresSafeArea()
       .overlay {
         Group {
-          switch authModel.authState {
+          switch authState {
           case .loading:
             ProgressView()
           case .unauthenticated:
