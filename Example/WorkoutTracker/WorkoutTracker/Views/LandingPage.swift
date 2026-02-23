@@ -6,9 +6,10 @@
 
 import ClerkKitUI
 import SwiftUI
+import ConvexMobile
 
 struct LandingPage: View {
-  @StateObject var authModel = AuthModel()
+  @State private var authState: AuthState<String> = .loading
   @State private var authViewIsPresented = false
 
   var body: some View {
@@ -39,6 +40,11 @@ struct LandingPage: View {
       }
       .sheet(isPresented: $authViewIsPresented) {
         AuthView()
+      }
+      .task {
+        for await state in client.authState.values {
+          authState = state
+        }
       }
   }
 }
