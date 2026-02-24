@@ -15,54 +15,54 @@ Follow the [Clerk iOS quickstart](https://clerk.com/docs/ios/getting-started/qui
 2. In the Clerk Dashboard, complete the [Convex integration setup](https://dashboard.clerk.com/apps/setup/convex)
 3. Configure Convex auth by creating `convex/auth.config.ts`:
 
-```typescript
-export default {
-  providers: [
-    {
-      domain: "YOUR_CLERK_ISSUER_URL",
-      applicationID: "convex",
-    },
-  ],
-};
-```
+    ```typescript
+    export default {
+      providers: [
+        {
+          domain: "YOUR_CLERK_FRONTEND_API_URL",
+          applicationID: "convex",
+        },
+      ],
+    };
+    ```
 
 4. Run `npx convex dev` to sync backend auth configuration.
 5. Add `ClerkConvex` to your app.
 
-To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), navigate to your Xcode project, select `Package Dependencies` and click the `+` icon to search for `https://github.com/clerk/clerk-ios`.
-
-Alternatively, add the following as a dependency to your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/clerk/clerk-convex-swift", from: "0.1.0")
-]
-
-// Then add ClerkConvex to your target dependencies:
-targets: [
-  .target(
-    name: "YourApp",
+    To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), navigate to your Xcode project, select `Package Dependencies` and click the `+` icon to search for `https://github.com/clerk/clerk-ios`.
+  
+    Alternatively, add the following as a dependency to your `Package.swift`:
+    
+    ```swift
     dependencies: [
-      .product(name: "ClerkConvex", package: "clerk-convex-swift")
+        .package(url: "https://github.com/clerk/clerk-convex-swift", from: "0.1.0")
     ]
-  )
-]
-```
+    
+    // Then add ClerkConvex to your target dependencies:
+    targets: [
+      .target(
+        name: "YourApp",
+        dependencies: [
+          .product(name: "ClerkConvex", package: "clerk-convex-swift")
+        ]
+      )
+    ]
+    ```
 
 6. Wherever you currently create `ConvexClient`, switch to `ConvexClientWithAuth` and pass `ClerkConvexAuthProvider`:
 
-```swift
-import ClerkKit
-import ClerkConvex
-import ConvexMobile
-
-Clerk.configure(publishableKey: "YOUR_CLERK_PUBLISHABLE_KEY")
-
-let client = ConvexClientWithAuth(
-  deploymentUrl: "YOUR_CONVEX_DEPLOYMENT_URL",
-  authProvider: ClerkConvexAuthProvider()
-)
-```
+    ```swift
+    import ClerkKit
+    import ClerkConvex
+    import ConvexMobile
+    
+    Clerk.configure(publishableKey: "YOUR_CLERK_PUBLISHABLE_KEY")
+    
+    let client = ConvexClientWithAuth(
+      deploymentUrl: "YOUR_CONVEX_DEPLOYMENT_URL",
+      authProvider: ClerkConvexAuthProvider()
+    )
+    ```
 
 7. Authenticate users via Clerk. Auth state is automatically synced to Convex.
 
