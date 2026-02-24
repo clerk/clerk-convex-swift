@@ -28,6 +28,27 @@ export default {
 
 4. Run `npx convex dev` to sync backend auth configuration.
 5. Add `ClerkConvex` to your app.
+
+To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), navigate to your Xcode project, select `Package Dependencies` and click the `+` icon to search for `https://github.com/clerk/clerk-ios`.
+
+Alternatively, add the following as a dependency to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/clerk/clerk-convex-swift", from: "0.1.0")
+]
+
+// Then add ClerkConvex to your target dependencies:
+targets: [
+  .target(
+    name: "YourApp",
+    dependencies: [
+      .product(name: "ClerkConvex", package: "clerk-convex-swift")
+    ]
+  )
+]
+```
+
 6. Wherever you currently create `ConvexClient`, switch to `ConvexClientWithAuth` and pass `ClerkConvexAuthProvider`:
 
 ```swift
@@ -43,7 +64,7 @@ let client = ConvexClientWithAuth(
 )
 ```
 
-6. Authenticate users via Clerk; auth state is automatically synced to Convex.
+7. Authenticate users via Clerk. Auth state is automatically synced to Convex.
 
 ### Reacting to authentication state
 
